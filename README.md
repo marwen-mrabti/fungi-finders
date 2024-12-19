@@ -1,6 +1,9 @@
-# React TypeScript Starter
+# Fungi Finders
 
-A modern React starter template with the latest tools and best practices for building scalable web applications.
+```bash
+git repo [https://github.com/marwen-mrabti/fungi-finders]
+live demo [https://fungi-finders.pages.dev]
+```
 
 ## 🚀 Features
 
@@ -26,7 +29,7 @@ A modern React starter template with the latest tools and best practices for bui
 1. Clone the repository:
 
 ```bash
-git clone [https://github.com/marwen-mrabti/vite-react-19-starter]
+git clone []
 cd react-ts-starter
 ```
 
