@@ -1,7 +1,10 @@
 import BenefitsOverview from "./components/benefits-overview";
+import Community from "./components/community";
 import CtaBanner from "./components/cta-banner";
+import Footer from "./components/footer";
 import Header from "./components/header";
 import Hero from "./components/hero";
+import SafetyEducation from "./components/safety-education";
 
 function App() {
   return (
@@ -11,6 +14,9 @@ function App() {
         <Hero />
         <BenefitsOverview />
         <CtaBanner />
+        <SafetyEducation />
+        <Community />
+        <Footer />
       </main>
     </div>
   );

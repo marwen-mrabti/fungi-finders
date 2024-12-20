@@ -10,6 +10,7 @@ export type T_Benefit = {
   title: string;
   description: string;
   imgUrl: string;
+  alt?: string;
 };
 const BENEFITS: T_Benefit[] = [
   {
@@ -17,18 +18,21 @@ const BENEFITS: T_Benefit[] = [
     description:
       "Mushroom foraging takes you off the beaten path and into the heart of nature. Learn to read the landscape, identifying prime mushroom habitats from lush forest floors to sun-dappled meadows. Every expedition is a new adventure, with the potential for exciting discoveries around every tree and under every log.",
     imgUrl: outdoorExplorationImg,
+    alt: "A cluster of small, grey-brown mushrooms growing in a tiered formation on a mossy tree trunk. The mushrooms have delicate, umbrella-like caps arranged in a cascading pattern.",
   },
   {
     title: "Botanical Expertise",
     description:
       "Dive into the intricate world of fungal biology. Discover the unique structures of mushrooms, from caps to gills to spores. Learn to use field guides and identification keys to distinguish between species. With practice, you'll start to see the forest in a whole new light, recognizing the vital role fungi play in ecosystem health.",
     imgUrl: botanicalExpertiseImg,
+    alt: "A diverse collection of wild mushrooms, showcasing various shapes, sizes, and colors, arranged on a wooden surface with some moss.",
   },
   {
     title: "Culinary Delight",
     description:
       "Transform your foraged finds into delectable dishes. Many edible mushrooms offer unique flavors and textures that can elevate your cooking. From the earthy porcini to the delicate chanterelle, each variety brings its own character to the table. Explore recipes, preservation techniques, and the joy of cooking with nature's bounty.",
     imgUrl: culinaryDelightImg,
+    alt: "A culinary dish featuring fresh mushroom slices, a poached egg with a runny yolk, greens, and toast, plated beautifully with steam rising.",
   },
 ];
 
@@ -52,7 +56,7 @@ export default function BenefitsOverview() {
         <ul
           className={cn(
             "mt-4 w-full",
-            "grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] place-items-center gap-4",
+            "grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] place-items-center gap-4",
           )}
         >
           {BENEFITS.map((benefit) => (

@@ -10,14 +10,14 @@ export default function BenefitCard({ benefit, className }: BenefitCardProps) {
   return (
     <li
       className={cn(
-        "bg-background-extra-dark h-full w-full overflow-clip rounded-md shadow-lg",
+        "bg-background-light h-full w-full overflow-clip rounded-md shadow-lg",
         className,
       )}
     >
       <div className="w-full overflow-hidden rounded-md">
         <img
           src={benefit.imgUrl}
-          alt={benefit.title}
+          alt={benefit?.alt ?? benefit.title}
           loading="lazy"
           className="h-full w-full object-cover"
         />
