@@ -123,7 +123,7 @@
 @variant dark (&:where(.dark, .dark *));
 @theme {
   /** colors **/
-  --color-*: initial;
+  /* --color-*: initial; */
   --color-main: var(--clr-gray-100);
   --color-high-contrast: var(--clr-white);
   --color-brand: var(--clr-brand-500);
