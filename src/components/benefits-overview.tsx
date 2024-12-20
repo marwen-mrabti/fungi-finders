@@ -39,7 +39,7 @@ export default function BenefitsOverview() {
       className="relative isolate w-full px-4 py-10 select-none"
     >
       <div className={cn("mx-auto w-full max-w-7xl", "grid grid-cols-1 gap-2")}>
-        <h1 className="text-heading-base text-hight-contrast">
+        <h1 className="text-heading-base text-hight-contrast font-bold">
           The joys of mushroom foraging
         </h1>
         <p className="text-main max-w-[70ch] text-base">
@@ -59,7 +59,7 @@ export default function BenefitsOverview() {
             <BenefitCard
               key={benefit.title}
               benefit={benefit}
-              className="row-span-4 grid grid-rows-subgrid gap-4 p-4"
+              className="row-span-3 grid grid-rows-subgrid gap-4 p-4"
             />
           ))}
         </ul>

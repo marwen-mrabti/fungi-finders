@@ -23,7 +23,7 @@ export default function BenefitCard({ benefit, className }: BenefitCardProps) {
         />
       </div>
 
-      <h2 className="text-brand text-lg">{benefit.title}</h2>
+      <h2 className="text-brand text-lg font-semibold">{benefit.title}</h2>
       <p className="text-main text-base">{benefit.description}</p>
     </li>
   );

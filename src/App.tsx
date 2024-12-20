@@ -1,4 +1,5 @@
 import BenefitsOverview from "./components/benefits-overview";
+import CtaBanner from "./components/cta-banner";
 import Header from "./components/header";
 import Hero from "./components/hero";
 
@@ -9,6 +10,7 @@ function App() {
       <main className="flex w-full flex-col items-center">
         <Hero />
         <BenefitsOverview />
+        <CtaBanner />
       </main>
     </div>
   );
