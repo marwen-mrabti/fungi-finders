@@ -6,14 +6,14 @@ export default function Hero() {
     <section
       id="hero"
       className={cn(
-        "relative isolate h-dvh w-full select-none",
+        "relative isolate h-full min-h-dvh w-full px-2 py-10 select-none md:px-4 md:py-20",
         `bg-cover bg-center bg-no-repeat`,
       )}
       style={{ backgroundImage: `url(${heroImg})` }}
     >
       <div
         className={cn(
-          "mx-auto w-full max-w-7xl pt-12 lg:pt-20",
+          "mx-auto w-full max-w-7xl",
           "grid grid-cols-1 place-items-center gap-4",
         )}
       >
@@ -25,7 +25,7 @@ export default function Hero() {
             Mushroom Foraging
           </span>
         </h1>
-        <div className="flex w-full max-w-[60ch] flex-col items-center justify-center gap-2 px-2 text-center">
+        <div className="flex w-full flex-col items-center justify-center gap-2 px-2 text-center md:max-w-[65ch]">
           <p>
             Mushroom foraging is the art and science of identifying and
             collecting wild mushrooms.
