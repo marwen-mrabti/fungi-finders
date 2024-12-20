@@ -15,6 +15,7 @@
 
   body {
     /* 3. Add accessible line-height */
+    min-block-size: 100dvh;
     line-height: 1.5;
     /* 4. Improve text rendering */
     -webkit-font-smoothing: antialiased;
@@ -67,251 +68,91 @@
 */
   #root {
     isolation: isolate;
-    width: 100dvw;
-    height: 100dvh;
-    overflow-x: clip;
     scroll-behavior: smooth;
   }
 }
 
-@layer base {
+@layer themes {
   :root {
-    /* Base Colors */
-    --background: hsl(0 0% 100%);
-    --foreground: hsl(0 5% 13%);
+    /* Light theme */
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-gray-100: hsl(0, 2%, 79%);
+    --clr-brand-400: hsl(25, 88%, 75%);
+    --clr-brand-500: hsl(25, 88%, 66%);
+    --clr-green-400: hsl(143, 19%, 49%);
+    --clr-green-500: hsl(143, 38%, 37%);
+    --clr-green-600: hsl(145, 29%, 19%);
+    --clr-brown-500: hsl(10, 5%, 25%);
+    --clr-brown-600: hsl(9, 7%, 21%);
+    --clr-brown-700: hsl(9, 8%, 16%);
+    --clr-brown-800: hsl(0, 6%, 15%);
+    --clr-brown-900: hsl(0, 6%, 13%);
 
-    /* Card */
-    --card: hsl(0 0% 100%);
-    --card-foreground: hsl(0 5% 13%);
+    --clr-orange-500: hsl(28, 43%, 28%);
+    --clr-red-500: hsl(359, 34%, 24%);
+    --clr-teal-500: hsl(186, 42%, 25%);
 
-    /* Popover */
-    --popover: hsl(0 0% 100%);
-    --popover-foreground: hsl(0 5% 13%);
+    --ff-heading: "Outfit", sans-serif;
+    --ff-body: "Fira Sans", sans-serif;
 
-    /* Primary */
-    --primary: hsl(24 89% 66%);
-    --primary-foreground: hsl(0 0% 100%);
+    --fs-300: 0.875rem;
+    --fs-400: 1rem;
+    --fs-500: 1.125rem;
+    --fs-600: 1.25rem;
+    --fs-700: 1.5rem;
+    --fs-800: 2rem;
+    --fs-900: 3.75rem;
+    --fs-1000: 3.75rem;
 
-    /* Secondary */
-    --secondary: hsl(24 85% 75%);
-    --secondary-foreground: hsl(0 5% 13%);
-
-    /* Muted */
-    --muted: hsl(0 2% 79%);
-    --muted-foreground: hsl(0 4% 25%);
-
-    /* Accent */
-    --accent: hsl(149 37% 37%);
-    --accent-foreground: hsl(0 0% 100%);
-
-    /* Destructive */
-    --destructive: hsl(359 33% 37%);
-    --destructive-foreground: hsl(0 0% 100%);
-
-    /* Border/Input */
-    --border: hsl(0 2% 79%);
-    --input: hsl(0 2% 79%);
-
-    /* Ring */
-    --ring: hsl(149 37% 37%);
-    --radius: 0.75rem;
-
-    /* Sidebar */
-    --sidebar-background: hsl(0 0% 97%);
-    --sidebar-foreground: hsl(0 4% 25%);
-    --sidebar-primary: hsl(149 37% 37%);
-    --sidebar-primary-foreground: hsl(0 0% 100%);
-    --sidebar-accent: hsl(149 19% 49%);
-    --sidebar-accent-foreground: hsl(0 0% 100%);
-    --sidebar-border: hsl(0 2% 79%);
-    --sidebar-ring: hsl(149 37% 37%);
-
-    /* Charts */
-    --chart-1: hsl(24 89% 66%);
-    --chart-2: hsl(185 41% 37%);
-    --chart-3: hsl(27 43% 37%);
-    --chart-4: hsl(149 37% 37%);
-    --chart-5: hsl(359 33% 37%);
+    @media (width > 760px) {
+      --fs-300: 0.875rem;
+      --fs-400: 1rem;
+      --fs-500: 1.25rem;
+      --fs-600: 1.5rem;
+      --fs-700: 2rem;
+      --fs-800: 3rem;
+      --fs-900: 5rem;
+      --fs-1000: 7.5rem;
+    }
   }
-
-  .dark {
-    /* Base Colors */
-    --background: hsl(0 5% 13%);
-    --foreground: hsl(0 0% 100%);
-
-    /* Card */
-    --card: hsl(0 3% 15%);
-    --card-foreground: hsl(0 0% 100%);
-
-    /* Popover */
-    --popover: hsl(0 3% 15%);
-    --popover-foreground: hsl(0 0% 100%);
-
-    /* Primary */
-    --primary: hsl(24 89% 66%);
-    --primary-foreground: hsl(0 5% 13%);
-
-    /* Secondary */
-    --secondary: hsl(4 7% 21%);
-    --secondary-foreground: hsl(0 0% 100%);
-
-    /* Muted */
-    --muted: hsl(6 8% 16%);
-    --muted-foreground: hsl(0 2% 79%);
-
-    /* Accent */
-    --accent: hsl(149 19% 49%);
-    --accent-foreground: hsl(0 0% 100%);
-
-    /* Destructive */
-    --destructive: hsl(359 33% 37%);
-    --destructive-foreground: hsl(0 0% 100%);
-
-    /* Border/Input */
-    --border: hsl(6 8% 16%);
-    --input: hsl(6 8% 16%);
-
-    /* Ring */
-    --ring: hsl(149 19% 49%);
-
-    /* Sidebar */
-    --sidebar-background: hsl(0 3% 15%);
-    --sidebar-foreground: hsl(0 2% 79%);
-    --sidebar-primary: hsl(149 37% 37%);
-    --sidebar-primary-foreground: hsl(0 0% 100%);
-    --sidebar-accent: hsl(149 30% 20%);
-    --sidebar-accent-foreground: hsl(0 0% 100%);
-    --sidebar-border: hsl(6 8% 16%);
-    --sidebar-ring: hsl(149 19% 49%);
-
-    /* Charts */
-    --chart-1: hsl(24 89% 66%);
-    --chart-2: hsl(185 41% 37%);
-    --chart-3: hsl(27 43% 37%);
-    --chart-4: hsl(149 19% 49%);
-    --chart-5: hsl(359 33% 37%);
-  }
-}
-
-@variant dark (&:where(.dark, .dark *));
-
-@theme {
-  /** colors **/
-  --color-*:initial;
-  /* Base Colors */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-  /* Card */
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-
-  /* Popover */
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-
-  /* Primary */
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-
-  /* Secondary */
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-
-  /* Muted */
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-
-  /* Accent */
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-
-  /* Destructive */
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-
-  /* Border/Input */
-  --color-border: var(--border);
-  --color-input: var(--input);
-
-  /* Ring */
-  --color-ring: var(--ring);
-
-  /* Sidebar Background */
-  --color-sidebar-background: var(--sidebar-background);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-
-  /* Sidebar Primary */
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-
-  /* Sidebar Accent */
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-
-  /* Sidebar Border and Ring */
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-
-  /* Charts */
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-
-  /** radius **/
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
-
-  /** easings **/
-  --ease-spring: linear(
-    0,
-    0.169 3.6%,
-    0.295 6.7%,
-    0.411 10.1%,
-    0.516 13.8%,
-    0.609 17.8%,
-    0.687 22%,
-    0.755 26.6%,
-    0.813 31.7%,
-    0.859 37%,
-    0.896 42.8%,
-    0.95 56.5%,
-    0.98 74.2%,
-    1
-  );
 }
 
 @layer components {
-  .bg-grid {
-    background:
-      fixed
-        linear-gradient(to bottom right, transparent 10%, var(--background) 85%),
-      fixed
-        repeating-linear-gradient(
-          to right,
-          transparent 0px 2px,
-          var(--foreground-subtle) 2px 3px,
-          transparent 3px 30px
-        ),
-      fixed
-        repeating-linear-gradient(
-          to bottom,
-          transparent 0px 2px,
-          var(--foreground-subtle) 2px 3px,
-          transparent 3px 30px
-        )
-        var(--background-muted);
-  }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+@variant dark (&:where(.dark, .dark *));
+@theme {
+  /** colors **/
+  --color-*: initial;
+  --color-main: var(--clr-gray-100);
+  --color-high-contrast: var(--clr-white);
+  --color-brand: var(--clr-brand-500);
+  --color-brand-light: var(--clr-brand-400);
+
+  --color-background-accent-light: var(--clr-green-400);
+  --color-background-accent-main: var(--clr-green-500);
+  --color-background-accent-dark: var(--clr-green-600);
+
+  --color-background-extra-light: var(--clr-brown-500);
+  --color-background-light: var(--clr-brown-600);
+  --color-background-main: var(--clr-brown-700);
+  --color-background-dark: var(--clr-brown-800);
+  --color-background-extra-dark: var(--clr-brown-900);
+
+  /** typography **/
+  --text-heading-sm: var(--fs-700);
+  --text-heading-base: var(--fs-800);
+  --text-heading-lg: var(--fs-900);
+  --text-heading-xl: var(--fs-1000);
+
+  --text-sm: var(--fs-300);
+  --text-base: var(--fs-400);
+  --text-md: var(--fs-500);
+  --text-lg: var(--fs-600);
+
+  --radius-sm: 0.25rem;
+  --radius-base: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-mb: 4rem;
 }
