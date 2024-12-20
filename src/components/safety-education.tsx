@@ -38,6 +38,10 @@ export default function SafetyEducation() {
           )}
         >
           Reference Guide
+          <span className="sr-only">
+            to help you identify the different types of mushrooms and their
+            toxic look-alikes.
+          </span>
         </button>
       </div>
     </section>

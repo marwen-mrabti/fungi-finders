@@ -25,6 +25,10 @@ export default function Community() {
           )}
         >
           Learn more
+          <span className="sr-only">
+            about the different types of mushrooms using our handy reference
+            guide.
+          </span>
         </button>
       </div>
       <div className="w-full overflow-clip rounded-md">
