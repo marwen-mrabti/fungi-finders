@@ -5,9 +5,9 @@ import Header from "~/components/header";
 
 export const Route = createRootRoute({
   component: () => (
-    <div className="bg-background-main text-main relative h-full min-h-dvh w-full max-w-screen overflow-clip text-base">
+    <div className="bg-background-main text-main relative h-full min-h-dvh w-full max-w-dvw overflow-clip text-base">
       <Header />
-      <Outlet />
+      <Outlet /> {/* the main content will render here */}
       <Footer />
       <TanStackRouterDevtools />
     </div>

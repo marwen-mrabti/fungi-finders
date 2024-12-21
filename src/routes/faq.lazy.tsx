@@ -5,5 +5,7 @@ export const Route = createLazyFileRoute("/faq")({
 });
 
 function FAQComponent() {
-  return <div className="h-dvh w-full px-4 py-4">Hello "/faq"!</div>;
+  return (
+    <main className="flex w-full flex-col items-center">Hello "/faq"!</main>
+  );
 }

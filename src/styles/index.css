@@ -63,16 +63,20 @@
     text-wrap: balance;
   }
 
-  /*
-  9. Create a root stacking context
-*/
+  /* 9. Create a root stacking context */
   #root {
     isolation: isolate;
     scroll-behavior: smooth;
   }
+
+  /* 10. for height animation + scrollbar width */
+  :root {
+    interpolate-size: allow-keywords;
+    scrollbar-width: thin;
+  }
 }
 
-@layer themes {
+@layer variables {
   :root {
     /* Light theme */
     --clr-white: hsl(0, 0%, 100%);
@@ -117,13 +121,10 @@
   }
 }
 
-@layer components {
-}
-
 @variant dark (&:where(.dark, .dark *));
 @theme {
   /** colors **/
-  /* --color-*: initial; */
+  --color-*: initial;
   --color-main: var(--clr-gray-100);
   --color-high-contrast: var(--clr-white);
   --color-brand: var(--clr-brand-500);
@@ -154,5 +155,4 @@
   --radius-base: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
-  --radius-mb: 4rem;
 }

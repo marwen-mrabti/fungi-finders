@@ -1,13 +1,33 @@
 import { Link } from "@tanstack/react-router";
-import { Menu } from "lucide-react";
 import { fungiFindersLogoImg } from "~/assets";
+import MobileNav from "./mobile-nav";
+
+export type T_NavItem = {
+  name: string;
+  link: string;
+};
+
+const NavList: T_NavItem[] = [
+  {
+    name: "Discover",
+    link: "/",
+  },
+  {
+    name: "Mushroom Guide",
+    link: "/mushroom-guide",
+  },
+  {
+    name: "FAQ",
+    link: "/faq",
+  },
+];
 
 export default function Nav() {
   return (
     <nav className="flex w-full max-w-7xl items-center justify-between px-4 py-2">
       <Link
         to="/"
-        className="[&.active]:text-brand-light w-32 [&.active]:font-bold"
+        className="[&.active]:text-brand-light w-32 shrink-0 [&.active]:font-bold"
       >
         <img
           src={fungiFindersLogoImg}
@@ -17,34 +37,21 @@ export default function Nav() {
       </Link>
 
       <ul className="hidden gap-4 lg:flex">
-        <li className="hover:text-high-contrast cursor-pointer">
-          <Link
-            to="/"
-            className="[&.active]:text-brand-light [&.active]:font-bold"
+        {NavList.map((item) => (
+          <li
+            key={item.name}
+            className="hover:text-high-contrast cursor-pointer"
           >
-            Discover
-          </Link>
-        </li>
-        <li className="hover:text-high-contrast cursor-pointer">
-          <Link
-            to="/mushroom-guide"
-            className="[&.active]:text-brand-light [&.active]:font-bold"
-          >
-            Mushroom Guide
-          </Link>
-        </li>
-        <li className="hover:text-high-contrast cursor-pointer">
-          <Link
-            to="/faq"
-            className="[&.active]:text-brand-light [&.active]:font-bold"
-          >
-            FAQ
-          </Link>
-        </li>
+            <Link
+              to={item.link}
+              className="[&.active]:text-brand-light [&.active]:font-bold"
+            >
+              {item.name}
+            </Link>
+          </li>
+        ))}
       </ul>
-      <button className="group grid cursor-pointer place-items-center lg:hidden">
-        <Menu className="group-hover:text-brand-light focus-visible:text-brand transition-all duration-200 ease-linear" />
-      </button>
+      <MobileNav navList={NavList} />
     </nav>
   );
 }

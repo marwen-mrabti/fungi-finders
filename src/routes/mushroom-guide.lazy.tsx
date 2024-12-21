@@ -5,5 +5,9 @@ export const Route = createLazyFileRoute("/mushroom-guide")({
 });
 
 function RouteComponent() {
-  return <div className="h-dvh w-full px-4 py-4">Hello "/mushroom-guide"!</div>;
+  return (
+    <main className="flex w-full flex-col items-center">
+      Hello "/mushroom-guide"!
+    </main>
+  );
 }

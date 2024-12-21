@@ -7,6 +7,7 @@ export default function Hero() {
       id="hero"
       className={cn(
         "relative isolate h-full min-h-dvh w-full px-2 py-10 select-none md:px-4 md:py-20",
+        "grid grid-cols-1 place-items-center",
         `bg-cover bg-center bg-no-repeat`,
       )}
       style={{ backgroundImage: `url(${heroImg})` }}
