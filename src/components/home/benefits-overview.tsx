@@ -40,7 +40,7 @@ export default function BenefitsOverview() {
   return (
     <section
       id="benefits-overview"
-      className="relative isolate w-full px-4 py-10 select-none md:px-4 md:py-20"
+      className="bg-background-main relative isolate w-full px-4 py-10 select-none md:px-4 md:py-20"
     >
       <div className={cn("mx-auto w-full max-w-7xl", "grid grid-cols-1 gap-2")}>
         <h1 className="text-heading-base text-hight-contrast font-bold">

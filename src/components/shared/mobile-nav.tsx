@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Menu } from "lucide-react";
 import { useEffect, useRef } from "react";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 import { type T_NavItem } from "./nav";
 
 export default function MobileNav({ navList }: { navList: T_NavItem[] }) {
@@ -36,7 +36,10 @@ export default function MobileNav({ navList }: { navList: T_NavItem[] }) {
   }, []);
 
   return (
-    <div ref={navRef} className="grid grid-cols-1 place-items-center lg:hidden">
+    <div
+      ref={navRef}
+      className="relative grid grid-cols-1 place-items-center lg:hidden"
+    >
       <button
         aria-label="Open navigation menu"
         className="group relative cursor-pointer"
@@ -55,7 +58,7 @@ export default function MobileNav({ navList }: { navList: T_NavItem[] }) {
         popover="auto"
         id="mobile-nav-list"
         className={cn(
-          "bg-background-accent-light absolute mt-1 mr-2 min-w-54 overflow-clip rounded-sm px-2 shadow-lg",
+          "bg-background-accent-light absolute mr-2 min-w-54 overflow-clip rounded-sm px-2 shadow-lg",
           "h-0 opacity-0 open:h-fit open:opacity-100 starting:open:h-0 starting:open:opacity-0",
           "transition-all transition-discrete duration-500",
           "[&:popover-open]:bg-background-accent-main",
@@ -63,8 +66,7 @@ export default function MobileNav({ navList }: { navList: T_NavItem[] }) {
         style={
           {
             positionAnchor: "--mobile-nav-list",
-            top: "anchor(--mobile-nav-list bottom)",
-            justifySelf: "anchor-center",
+            positionArea: "bottom left", // ref: https://css-tricks.com/yet-another-anchor-positioning-quirk
           } as React.CSSProperties
         }
       >

@@ -1,12 +1,13 @@
-import { getToKnowImg } from "../assets";
-import { cn } from "../lib/utils";
+import { Link } from "@tanstack/react-router";
+import { getToKnowImg } from "~/assets";
+import { cn } from "~/lib/utils";
 
 export default function SafetyEducation() {
   return (
     <section
       id="safety-education"
       className={cn(
-        "w-full px-4 py-10 md:px-8",
+        "isolate w-full px-4 py-10 md:px-8",
         "grid grid-cols-1 place-items-center",
       )}
     >
@@ -27,20 +28,22 @@ export default function SafetyEducation() {
           <h1 className="text-heading-sm text-high-contrast font-bold">
             Get to know your mushrooms
           </h1>
-          <p className="">
+          <p className="text-md font-semibold">
             Successful and safe mushroom foraging begins with a deep
             understanding of the species you'll encounter in the wild - not just
             what the edible ones look like, but their toxic look-alikes,
             seasonal patterns, and preferred habitats.
           </p>
-          <p>
-            It can feel like a big task, but we've got a handy reference guide
-            to help you out!
+          <p className="text-md font-semibold">
+            It can feel like a big task, but we've got a{" "}
+            <em className="font-bold">handy reference guide</em> to help you
+            out!
           </p>
-          <button
+          <Link
+            to="/mushroom-guide"
             className={cn(
-              "bg-background-accent-main text-high-contrast w-fit rounded-sm px-4 py-2",
-              "hover:bg-background-accent-main/90 hover:text-main cursor-pointer transition-all duration-200 ease-in-out",
+              "bg-background-accent-main text-high-contrast w-fit rounded-sm px-4 py-2 font-bold",
+              "hover:bg-background-accent-main/90 hover:text-main focus-visible:bg-background-accent-main/90focus-visible:text-main cursor-pointer transition-all duration-200 ease-in-out",
             )}
           >
             Reference Guide
@@ -48,7 +51,7 @@ export default function SafetyEducation() {
               to help you identify the different types of mushrooms and their
               toxic look-alikes.
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

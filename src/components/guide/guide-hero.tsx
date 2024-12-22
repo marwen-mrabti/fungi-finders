@@ -1,7 +1,7 @@
 import { heroImg } from "~/assets";
 import { cn } from "~/lib/utils";
 
-export default function Hero() {
+export default function GuideHero() {
   return (
     <section
       id="hero"
@@ -20,28 +20,24 @@ export default function Hero() {
       >
         <h1 className="flex flex-col items-center justify-center text-center">
           <span className="text-heading-base text-high-contrast font-bold">
-            Discover the World of
+            Quick reference
           </span>
           <span className="text-brand text-heading-lg font-bold">
-            Mushroom Foraging
+            Mushroom Guide
           </span>
         </h1>
         <div className="flex w-full flex-col items-center justify-center gap-2 px-2 text-center md:max-w-[65ch]">
           <p>
-            Mushroom foraging is the art and science of identifying and
-            collecting wild mushrooms.
+            Discover a wide array of mushrooms from around the world, each with
+            its own unique flavor profile and culinary uses.
           </p>
-
           <p>
-            It's a practice that combines outdoor exploration botanical
-            knowledge, and culinary adventure. Foragers venture into forests,
-            fields, and even urban green spaces to discover these hidden
-            treasures.
+            Whether you're looking for earthy porcinis, delicate chanterelles,
+            or meaty shiitakes, our selection has something for every palate.
           </p>
-
           <p>
-            But beware - this hobby requires careful study and respect for
-            nature, as some mushrooms can be dangerous if misidentified.
+            Explore the diverse shapes, sizes, and colors of these fungi to
+            elevate your dishes to new heights.
           </p>
         </div>
       </div>

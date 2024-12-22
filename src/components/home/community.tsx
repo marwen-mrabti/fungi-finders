@@ -1,12 +1,12 @@
-import { natureImg } from "../assets";
-import { cn } from "../lib/utils";
+import { natureImg } from "~/assets";
+import { cn } from "~/lib/utils";
 
 export default function Community() {
   return (
     <section
       id="community"
       className={cn(
-        "w-full px-4 py-10 md:px-8",
+        "bg-background-light isolate w-full px-4 py-10 md:px-8",
         "grid grid-cols-1 place-items-center",
       )}
     >
@@ -20,14 +20,14 @@ export default function Community() {
           <h1 className="text-heading-sm text-high-contrast font-bold">
             Connect with Nature
           </h1>
-          <p className="">
+          <p className="text-md font-semibold">
             Experience the beauty of the great outdoors while foraging for
             mushrooms with fellow enthusiasts.
           </p>
           <button
             className={cn(
-              "bg-background-accent-main text-high-contrast w-fit rounded-sm px-4 py-2",
-              "hover:bg-background-accent-main/90 hover:text-main cursor-pointer transition-all duration-200 ease-in-out",
+              "bg-background-accent-main text-high-contrast w-fit rounded-sm px-4 py-2 font-bold",
+              "hover:bg-background-accent-main/90 hover:text-main focus-visible:bg-background-accent-main/90focus-visible:text-main cursor-pointer transition-all duration-200 ease-in-out",
             )}
           >
             Learn more

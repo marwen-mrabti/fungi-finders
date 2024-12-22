@@ -1,7 +1,7 @@
 import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
-import Footer from "~/components/footer";
-import Header from "~/components/header";
+import Footer from "~/components/shared/footer";
+import Header from "~/components/shared/header";
 
 export const Route = createRootRoute({
   component: () => (
@@ -12,4 +12,5 @@ export const Route = createRootRoute({
       <TanStackRouterDevtools />
     </div>
   ),
+  notFoundComponent: () => <div>not found</div>,
 });

@@ -1,4 +1,5 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
+import GuideHero from "~/components/guide/guide-hero";
 
 export const Route = createLazyFileRoute("/mushroom-guide")({
   component: RouteComponent,
@@ -7,7 +8,7 @@ export const Route = createLazyFileRoute("/mushroom-guide")({
 function RouteComponent() {
   return (
     <main className="flex w-full flex-col items-center">
-      Hello "/mushroom-guide"!
+      <GuideHero />
     </main>
   );
 }
