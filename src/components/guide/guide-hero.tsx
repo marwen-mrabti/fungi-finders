@@ -1,12 +1,12 @@
 import { heroImg } from "~/assets";
+import SectionWrapper from "~/components/shared/section-wrapper";
 import { cn } from "~/lib/utils";
 
 export default function GuideHero() {
   return (
-    <section
+    <SectionWrapper
       id="hero"
       className={cn(
-        "relative isolate h-full min-h-dvh w-full px-2 py-10 select-none md:px-4 md:py-20",
         "grid grid-cols-1 place-items-center",
         `bg-cover bg-center bg-no-repeat`,
       )}
@@ -16,13 +16,12 @@ export default function GuideHero() {
         className={cn(
           "mx-auto w-full max-w-7xl",
           "grid grid-cols-1 place-items-center gap-4",
+          "text-high-contrast text-md text-center",
         )}
       >
-        <h1 className="flex flex-col items-center justify-center text-center">
-          <span className="text-heading-base text-high-contrast font-bold">
-            Quick reference
-          </span>
-          <span className="text-brand text-heading-lg font-bold">
+        <h1 className="text-heading-lg font-bold">
+          Quick reference{" "}
+          <span className="text-brand text-heading-xl block">
             Mushroom Guide
           </span>
         </h1>
@@ -41,6 +40,6 @@ export default function GuideHero() {
           </p>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

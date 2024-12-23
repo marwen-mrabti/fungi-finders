@@ -74,11 +74,15 @@ export default function MobileNav({ navList }: { navList: T_NavItem[] }) {
           {navList.map((item) => (
             <li
               key={item.name}
-              className="text-high-contrast hover:text-high-contrast/80 text-md w-full cursor-pointer font-bold"
+              className="text-high-contrast hover:text-high-contrast/80 text-md w-full cursor-pointer"
             >
               <Link
                 to={item.link}
-                className="[&.active]:text-brand-light hover:[&.active]:text-brand inline-block w-full py-4 whitespace-nowrap"
+                preload="intent"
+                className="hover:[&.active]:text-brand inline-block w-full py-4 font-semibold whitespace-nowrap"
+                activeProps={{
+                  className: "text-brand-light font-bold",
+                }}
               >
                 {item.name}
               </Link>

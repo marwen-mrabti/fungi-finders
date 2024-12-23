@@ -1,15 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { getToKnowImg } from "~/assets";
+import SectionWrapper from "~/components/shared/section-wrapper";
 import { cn } from "~/lib/utils";
 
 export default function SafetyEducation() {
   return (
-    <section
+    <SectionWrapper
       id="safety-education"
-      className={cn(
-        "isolate w-full px-4 py-10 md:px-8",
-        "grid grid-cols-1 place-items-center",
-      )}
+      className={cn("grid grid-cols-1 place-items-center")}
     >
       <div
         className={cn(
@@ -21,13 +19,14 @@ export default function SafetyEducation() {
           <img
             src={getToKnowImg}
             alt="A person foraging for mushrooms in a dense forest, carefully inspecting the ground with gloved hands, surrounded by trees and natural greenery."
-            className="h-full w-full object-cover"
+            loading="lazy"
+            className="aspect-10/9 w-full object-cover"
           />
         </div>
         <div className="flex max-w-[60ch] flex-col items-start justify-around gap-4">
-          <h1 className="text-heading-sm text-high-contrast font-bold">
+          <h2 className="text-heading-sm text-high-contrast font-bold">
             Get to know your mushrooms
-          </h1>
+          </h2>
           <p className="text-md font-semibold">
             Successful and safe mushroom foraging begins with a deep
             understanding of the species you'll encounter in the wild - not just
@@ -54,6 +53,6 @@ export default function SafetyEducation() {
           </Link>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

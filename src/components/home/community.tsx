@@ -1,12 +1,13 @@
 import { natureImg } from "~/assets";
+import SectionWrapper from "~/components/shared/section-wrapper";
 import { cn } from "~/lib/utils";
 
 export default function Community() {
   return (
-    <section
+    <SectionWrapper
       id="community"
       className={cn(
-        "bg-background-light isolate w-full px-4 py-10 md:px-8",
+        "bg-background-light",
         "grid grid-cols-1 place-items-center",
       )}
     >
@@ -17,9 +18,9 @@ export default function Community() {
         )}
       >
         <div className="flex max-w-[60ch] flex-col items-start justify-around gap-4">
-          <h1 className="text-heading-sm text-high-contrast font-bold">
+          <h2 className="text-heading-sm text-high-contrast font-bold">
             Connect with Nature
-          </h1>
+          </h2>
           <p className="text-md font-semibold">
             Experience the beauty of the great outdoors while foraging for
             mushrooms with fellow enthusiasts.
@@ -41,10 +42,11 @@ export default function Community() {
           <img
             src={natureImg}
             alt="Two small yellow mushrooms growing from a mossy forest floor, illuminated by dappled sunlight filtering through the trees. The mushrooms have pale stems and golden umbrella-like caps, surrounded by rich green moss and small ferns in a dark, atmospheric woodland setting."
-            className="h-full w-full object-cover"
+            loading="lazy"
+            className="aspect-10/9 w-full object-cover"
           />
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

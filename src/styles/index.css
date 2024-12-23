@@ -93,6 +93,7 @@
     --clr-brown-900: hsl(0, 6%, 13%);
 
     --clr-orange-500: hsl(28, 43%, 28%);
+    --clr-yellow-500: hsl(54, 78%, 27%);
     --clr-red-500: hsl(359, 34%, 24%);
     --clr-teal-500: hsl(186, 42%, 25%);
 
@@ -125,6 +126,7 @@
 @theme {
   /** colors **/
   --color-*: initial;
+  --color-white: var(--clr-white);
   --color-main: var(--clr-gray-100);
   --color-high-contrast: var(--clr-white);
   --color-brand: var(--clr-brand-500);
@@ -139,6 +141,11 @@
   --color-background-main: var(--clr-brown-700);
   --color-background-dark: var(--clr-brown-800);
   --color-background-extra-dark: var(--clr-brown-900);
+
+  --color-background-danger: var(--clr-red-500);
+  --color-background-spring: var(--clr-teal-500);
+  --color-background-summer: var(--clr-yellow-500);
+  --color-background-fall: var(--clr-orange-500);
 
   /** typography **/
   --text-heading-sm: var(--fs-700);

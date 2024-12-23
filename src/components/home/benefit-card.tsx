@@ -10,7 +10,7 @@ export default function BenefitCard({ benefit, className }: BenefitCardProps) {
   return (
     <li
       className={cn(
-        "bg-background-light h-full w-full overflow-clip rounded-md shadow-lg",
+        "bg-background-light outline-background-dark shadow-background-dark h-full w-full overflow-clip rounded-lg shadow-lg outline-2",
         className,
       )}
     >
@@ -23,7 +23,7 @@ export default function BenefitCard({ benefit, className }: BenefitCardProps) {
         />
       </div>
 
-      <h2 className="text-brand text-lg font-semibold">{benefit.title}</h2>
+      <h3 className="text-brand text-lg font-semibold">{benefit.title}</h3>
       <p className="text-main text-base">{benefit.description}</p>
     </li>
   );

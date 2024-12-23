@@ -1,14 +1,14 @@
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link, useRouter } from "@tanstack/react-router";
 import { ArrowLeft, CloudOff, Home } from "lucide-react";
 import { cn } from "~/lib/utils";
 export default function NotFound() {
-  const navigate = useNavigate({});
+  const router = useRouter();
 
   const handleGoBack = () => {
     if (window.history.length > 1) {
-      window.history.back();
+      router.history.back();
     } else {
-      navigate({ to: "/", replace: true });
+      router.navigate({ to: "/", replace: true });
     }
   };
 

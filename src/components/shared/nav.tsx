@@ -18,7 +18,7 @@ const NavList: T_NavItem[] = [
   },
   {
     name: "FAQ",
-    link: "/faq",
+    link: "/mushroom-guide#faq",
   },
 ];
 
@@ -27,6 +27,7 @@ export default function Nav() {
     <nav className="flex w-full max-w-7xl items-center justify-between px-4 py-2">
       <Link
         to="/"
+        preload="intent"
         className="[&.active]:text-brand-light w-32 shrink-0 [&.active]:font-bold"
       >
         <img
@@ -44,13 +45,18 @@ export default function Nav() {
           >
             <Link
               to={item.link}
-              className="[&.active]:text-brand-light [&.active]:font-bold"
+              preload="intent"
+              className="font-semibold"
+              activeProps={{
+                className: "text-brand-light font-bold",
+              }}
             >
               {item.name}
             </Link>
           </li>
         ))}
       </ul>
+
       <MobileNav navList={NavList} />
     </nav>
   );

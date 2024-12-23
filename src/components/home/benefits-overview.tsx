@@ -3,6 +3,7 @@ import {
   culinaryDelightImg,
   outdoorExplorationImg,
 } from "~/assets";
+import SectionWrapper from "~/components/shared/section-wrapper";
 import { cn } from "~/lib/utils";
 import BenefitCard from "./benefit-card";
 
@@ -38,20 +39,21 @@ const BENEFITS: T_Benefit[] = [
 
 export default function BenefitsOverview() {
   return (
-    <section
-      id="benefits-overview"
-      className="bg-background-main relative isolate w-full px-4 py-10 select-none md:px-4 md:py-20"
-    >
+    <SectionWrapper id="benefits-overview" className="bg-background-dark">
       <div className={cn("mx-auto w-full max-w-7xl", "grid grid-cols-1 gap-2")}>
-        <h1 className="text-heading-base text-hight-contrast font-bold">
-          The joys of mushroom foraging
-        </h1>
-        <p className="text-main max-w-[70ch] text-base">
-          Foraging for mushrooms can be a rewarding experience for many reasons.
-          People may venture off into the woods to forage for mushrooms because
-          it allows them to connect with nature, enjoy the thrill of the hunt,
-          and savor the satisfaction of finding a hidden culinary treasure.
-        </p>
+        <div className="mx-auto flex w-full flex-col items-center md:items-start">
+          <h2 className="text-heading-base text-hight-contrast font-bold">
+            The joys of mushroom foraging
+          </h2>
+          <p className="text-main max-w-[70ch] text-base">
+            Foraging for mushrooms can be a rewarding experience for many
+            reasons. People may venture off into the woods to forage for
+            mushrooms because it allows them to connect with nature, enjoy the
+            thrill of the hunt, and savor the satisfaction of finding a hidden
+            culinary treasure.
+          </p>
+        </div>
+
         {/* //!how to use grid and subgrid, with auto-fit for responsive layout */}
         <ul
           className={cn(
@@ -68,6 +70,6 @@ export default function BenefitsOverview() {
           ))}
         </ul>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }
