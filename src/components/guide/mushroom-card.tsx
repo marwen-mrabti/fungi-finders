@@ -12,7 +12,7 @@ export default function MushroomCard({
   return (
     <li
       className={cn(
-        "outline-background-extra-light bg-background-light text-main w-full rounded-md px-2 py-2 shadow-md outline-1",
+        "outline-background-extra-light bg-background-main text-main w-full rounded-md px-2 py-2 shadow-md outline-1",
         className,
       )}
     >

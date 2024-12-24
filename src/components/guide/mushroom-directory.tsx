@@ -55,13 +55,13 @@ export default function MushroomDirectory() {
     };
 
   return (
-    <SectionWrapper id="mushroom-directory" className="bg-background-main">
+    <SectionWrapper id="mushroom-directory" className="bg-background-light">
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6">
         <div className="text-main flex w-full flex-col gap-4">
           <h2 className="text-high-contrast text-heading-base font-bold">
             Get to know your mushrooms
           </h2>
-          <div className="flex w-full items-center gap-6">
+          <div className="flex w-full flex-wrap items-center gap-4">
             <CustomSelect
               label="Season"
               value={filters.season}
