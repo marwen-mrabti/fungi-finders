@@ -39,7 +39,7 @@ export default function SafetyEducation() {
             out!
           </p>
           <Link
-            to="/mushroom-guide"
+            to="/guide"
             className={cn(
               "bg-background-accent-main text-high-contrast w-fit rounded-sm px-4 py-2 font-bold",
               "hover:bg-background-accent-main/90 hover:text-main focus-visible:bg-background-accent-main/90focus-visible:text-main cursor-pointer transition-all duration-200 ease-in-out",

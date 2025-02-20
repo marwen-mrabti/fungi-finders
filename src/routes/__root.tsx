@@ -11,10 +11,8 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   const nodeEnv = process.env.NODE_ENV;
-  console.log(nodeEnv);
-
   return (
-    <div className="bg-background-main text-main relative h-full min-h-dvh w-full max-w-dvw overflow-clip text-base">
+    <div className="bg-background-main text-main relative grid h-full min-h-dvh w-full max-w-dvw content-between overflow-clip text-base">
       <Header />
       <Outlet /> {/* the main content will render here */}
       <Footer />

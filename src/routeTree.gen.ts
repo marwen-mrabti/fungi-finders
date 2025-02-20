@@ -14,24 +14,29 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as GuideMushroomIdImport } from './routes/guide/$mushroomId'
 
 // Create Virtual Routes
 
-const MushroomGuideLazyImport = createFileRoute('/mushroom-guide')()
+const GuideIndexLazyImport = createFileRoute('/guide/')()
 
 // Create/Update Routes
-
-const MushroomGuideLazyRoute = MushroomGuideLazyImport.update({
-  id: '/mushroom-guide',
-  path: '/mushroom-guide',
-  getParentRoute: () => rootRoute,
-} as any).lazy(() =>
-  import('./routes/mushroom-guide.lazy').then((d) => d.Route),
-)
 
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const GuideIndexLazyRoute = GuideIndexLazyImport.update({
+  id: '/guide/',
+  path: '/guide/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/guide/index.lazy').then((d) => d.Route))
+
+const GuideMushroomIdRoute = GuideMushroomIdImport.update({
+  id: '/guide/$mushroomId',
+  path: '/guide/$mushroomId',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -46,11 +51,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/mushroom-guide': {
-      id: '/mushroom-guide'
-      path: '/mushroom-guide'
-      fullPath: '/mushroom-guide'
-      preLoaderRoute: typeof MushroomGuideLazyImport
+    '/guide/$mushroomId': {
+      id: '/guide/$mushroomId'
+      path: '/guide/$mushroomId'
+      fullPath: '/guide/$mushroomId'
+      preLoaderRoute: typeof GuideMushroomIdImport
+      parentRoute: typeof rootRoute
+    }
+    '/guide/': {
+      id: '/guide/'
+      path: '/guide'
+      fullPath: '/guide'
+      preLoaderRoute: typeof GuideIndexLazyImport
       parentRoute: typeof rootRoute
     }
   }
@@ -60,37 +72,42 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/mushroom-guide': typeof MushroomGuideLazyRoute
+  '/guide/$mushroomId': typeof GuideMushroomIdRoute
+  '/guide': typeof GuideIndexLazyRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/mushroom-guide': typeof MushroomGuideLazyRoute
+  '/guide/$mushroomId': typeof GuideMushroomIdRoute
+  '/guide': typeof GuideIndexLazyRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/mushroom-guide': typeof MushroomGuideLazyRoute
+  '/guide/$mushroomId': typeof GuideMushroomIdRoute
+  '/guide/': typeof GuideIndexLazyRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/mushroom-guide'
+  fullPaths: '/' | '/guide/$mushroomId' | '/guide'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/mushroom-guide'
-  id: '__root__' | '/' | '/mushroom-guide'
+  to: '/' | '/guide/$mushroomId' | '/guide'
+  id: '__root__' | '/' | '/guide/$mushroomId' | '/guide/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  MushroomGuideLazyRoute: typeof MushroomGuideLazyRoute
+  GuideMushroomIdRoute: typeof GuideMushroomIdRoute
+  GuideIndexLazyRoute: typeof GuideIndexLazyRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  MushroomGuideLazyRoute: MushroomGuideLazyRoute,
+  GuideMushroomIdRoute: GuideMushroomIdRoute,
+  GuideIndexLazyRoute: GuideIndexLazyRoute,
 }
 
 export const routeTree = rootRoute
@@ -104,14 +121,18 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/mushroom-guide"
+        "/guide/$mushroomId",
+        "/guide/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/mushroom-guide": {
-      "filePath": "mushroom-guide.lazy.tsx"
+    "/guide/$mushroomId": {
+      "filePath": "guide/$mushroomId.tsx"
+    },
+    "/guide/": {
+      "filePath": "guide/index.lazy.tsx"
     }
   }
 }

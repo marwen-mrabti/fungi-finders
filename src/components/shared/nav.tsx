@@ -14,11 +14,11 @@ const NavList: T_NavItem[] = [
   },
   {
     name: "Mushroom Guide",
-    link: "/mushroom-guide",
+    link: "/guide",
   },
   {
     name: "FAQ",
-    link: "/mushroom-guide#faq",
+    link: "/guide#faq",
   },
 ];
 
